@@ -8,7 +8,7 @@
   export let open = false;
 
   $: open = $selected === key;
-  
+
   function getLabel() {
     return key.replace("_", " ");
   }
@@ -23,6 +23,10 @@
   }
   label {
     font-weight: bold;
+    text-transform: capitalize;
+  }
+  input {
+    margin: .5rem 0 2rem;
   }
 </style>
 
@@ -32,18 +36,11 @@
     : {$json[key]}
   </p>
 {:else}
-  <div class="box">
-    <article class="media">
-      <div class="media-content">
-        <label for={`input_text_${key}`}>{key}</label>
-        <input
-          type="text"
-          id={`input_text_${key}`}
-          name={key}
-          bind:value={$json[key]} 
-          class="input"
-          />
-      </div>
-    </article>
-  </div>
+  <label for={`input_text_${key}`}>{key}</label>
+  <input
+    type="text"
+    id={`input_text_${key}`}
+    name={key}
+    bind:value={$json[key]}
+    class="" />
 {/if}

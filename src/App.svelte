@@ -1,5 +1,4 @@
 <script>
-  import "bulma/css/bulma.css";
   import { onMount, onDestroy, setContext } from "svelte";
   import { getJson } from "./utils/getJson";
   import FamilySelector from "./FamilySelector.svelte";
@@ -42,18 +41,18 @@
 
 <main>
   <section class="section">
-    <div class="container is-widescreen">
-      <div class="content">
+    <div class="">
+      <div class="">
         <h1>Highly specialized JSON Editor</h1>
       </div>
-      <div class="selector columns">
-        <div class="column">
+      <div class="selector">
+        <div class="">
           <FamilySelector />
           <SpecieSelector {selectedFamily} />
         </div>
-        <div class="column">
+        <div class="">
           {#if $json.scientific_name}
-            <div class="content">
+            <div class="">
               <h2>{$json.scientific_name}</h2>
             </div>
           {/if}
@@ -61,9 +60,9 @@
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container is-widescreen">
-      <div class="content">
+  <section class="">
+    <div class="">
+      <div class="">
         <JsonEditor />
 		<Exporter />
       </div>

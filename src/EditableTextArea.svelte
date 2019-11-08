@@ -23,6 +23,10 @@
   }
   label {
     font-weight: bold;
+    text-transform: capitalize;
+  }
+  textarea {
+    margin: 0.5rem 0 2rem;
   }
 </style>
 
@@ -32,12 +36,8 @@
     : {$json[key]}
   </p>
 {:else}
-  <div class="box">
-    <article class="media">
-      <div class="media-content">
-        <label for={`input_text_${key}`}>{key}</label>
-        <textarea id={`input_text_${key}`} name={key} class="textarea" rows={12}>{$json[key]}</textarea>
-      </div>
-    </article>
-  </div>
+  <label for={`input_text_${key}`}>{key}</label>
+  <textarea id={`input_text_${key}`} name={key} class="" rows={12}>
+    {$json[key]}
+  </textarea>
 {/if}

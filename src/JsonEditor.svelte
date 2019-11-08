@@ -6,6 +6,7 @@
   import { setContext } from "svelte";
   import EditableTextArea from "./EditableTextArea.svelte";
   import EditableTextLine from "./EditableTextLine.svelte";
+  import EditableTextList from "./EditableTextList.svelte";
   import { json } from "./stores.js";
   import { writable } from "svelte/store";
 
@@ -22,9 +23,9 @@
 </script>
 
 {#if $json.scientific_name}
-  <div class="content">
+  <div class="">
     <EditableTextLine key="scientific_name" />
-    <!-- <EditableText label={'Local names'} text={$json.local_names} /> -->
+    <EditableTextList key="local_names" />
     <EditableTextArea key="description" />
     <EditableTextArea key="behaviour" />
     <EditableTextArea key="habitat" />
