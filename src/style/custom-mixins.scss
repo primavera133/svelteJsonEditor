@@ -1,0 +1,13 @@
+// @import "mustard-ui/src/scss/mustard-ui.scss";
+
+@mixin truncate() {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  //   color: $color-gray-800;
+  margin-bottom: 0;
+  padding-left: 0;
+}

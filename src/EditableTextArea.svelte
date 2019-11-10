@@ -14,19 +14,34 @@
   }
 </script>
 
+<style type="text/scss">
+  @import "style/custom-mixins";
+
+  .truncate {
+    @include truncate();
+  }
+
+  .close {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+</style>
+
 {#if !open}
-  <button class="truncate btn-invisible" on:click={handleChange.bind(null, key)}>
+  <button
+    class="truncate button-primary-text"
+    on:click={handleChange.bind(null, key)}>
     <label>{getLabel()}</label>
     : {$json[key]}
   </button>
 {:else}
   <fieldset>
-    <button class="btn-invisible" on:click={() => ($selected = null)}>
-    <label for={`input_text_${key}`}>{key}</label>
+    <button class="truncate button-primary-text" on:click={() => ($selected = null)}>
+      <label for={`input_text_${key}`}>{key}</label>
     </button>
     <textarea id={`input_text_${key}`} name={key} class="" rows={12}>
       {$json[key]}
     </textarea>
-    <button on:click={() => $selected=null} >Close</button>
+    <button class="close button-primary-text" on:click={() => ($selected = null)}>Close</button>
   </fieldset>
 {/if}

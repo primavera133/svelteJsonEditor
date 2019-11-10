@@ -1,0 +1,67 @@
+{
+  "_from": "mustard-ui",
+  "_id": "mustard-ui@0.0.8",
+  "_inBundle": false,
+  "_integrity": "sha512-54UjvEqlE87jCYBRitLRC2gZHvmSrhwCrzhTJzfSeXWn4ihcymcawf5GyRQ0gSKReGwZs4+AM7r/eXX2BA8OJA==",
+  "_location": "/mustard-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "mustard-ui",
+    "name": "mustard-ui",
+    "escapedName": "mustard-ui",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/mustard-ui/-/mustard-ui-0.0.8.tgz",
+  "_shasum": "8818b66b56f4b74c573cb21e674b8f0212ca6e29",
+  "_spec": "mustard-ui",
+  "_where": "/Users/jonasmyrenas/Projects/Private/dragonapp/jsoneditor",
+  "author": {
+    "name": "Kyle Logue",
+    "email": "hello@kylelogue.com"
+  },
+  "bugs": {
+    "url": "https://github.com/kylelogue/mustard-ui/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "A starter CSS framework that actually looks good.",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "homepage": "https://github.com/kylelogue/mustard-ui#readme",
+  "keywords": [
+    "css",
+    "scss",
+    "sass",
+    "framework",
+    "starter",
+    "responsive",
+    "flexbox"
+  ],
+  "license": "MIT",
+  "main": "dist/css/mustard-ui.min.css",
+  "name": "mustard-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylelogue/mustard-ui.git"
+  },
+  "scripts": {
+    "build": "gulp sass",
+    "dev": "gulp"
+  },
+  "version": "0.0.8"
+}

@@ -22,6 +22,16 @@
   };
 </script>
 
+<style type="text/scss">
+
+
+div {
+  padding: 2rem 1rem;
+}
+</style>
+
 {#if $json.scientific_name}
-  <button on:click={handleClick}>Get JSON</button>
+<div>
+  <button class="button-success" on:click={handleClick}>Get JSON</button>
+</div>
 {/if}

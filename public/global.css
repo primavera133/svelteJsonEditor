@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 /* Remove default padding */
 ul,
 ol {
@@ -35,6 +39,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 1rem;
 }
 
 /* Remove list styles on ul, ol */
@@ -116,40 +121,4 @@ button:active {
 
 button:focus {
   border-color: #666;
-}
-
-/*** CUSTOM STYLES ***/
-label {
-  font-weight: bold;
-  text-transform: capitalize;
-  /* display: block; */
-}
-
-input,
-textarea {
-  margin: 0.5rem 0 2rem;
-  width: 100%;
-}
-textarea {
-  display: block;
-}
-
-fieldset {
-  margin: 0 0 2rem;
-  padding: 0;
-  border: none;
-}
-
-.truncate {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.btn-invisible {
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
 }

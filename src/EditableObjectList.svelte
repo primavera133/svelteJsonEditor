@@ -24,22 +24,37 @@
   }
 </script>
 
-<style>
+<style type="text/scss">
+  @import "style/custom-mixins";
   input {
     margin: 0.5rem 0 0;
+  }
+
+  .truncate {
+    @include truncate();
+  }
+  .close {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
   }
 </style>
 
 {#if !open}
   <button
-    class="truncate btn-invisible"
+    class="truncate button-primary-text"
     on:click={handleChange.bind(null, key)}>
     <label>{getLabel()}</label>
     : {getTruncatedValue()}
   </button>
 {:else}
   <fieldset>
-    <button class="btn-invisible" on:click={() => ($selected = null)}>
+    <button
+      class="truncate button-primary-text"
+      on:click={() => ($selected = null)}>
       <label>{key}</label>
     </button>
     <ul>
@@ -68,6 +83,10 @@
         </li>
       {/each}
     </ul>
-    <button on:click={() => ($selected = null)}>Close</button>
+    <button
+      class="close button-primary-text"
+      on:click={() => ($selected = null)}>
+      Close
+    </button>
   </fieldset>
 {/if}

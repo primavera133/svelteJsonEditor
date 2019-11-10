@@ -34,44 +34,43 @@
   }
 </script>
 
-<style>
-  h1 {
-    color: #e67e22;
+<style type="text/scss">
+  @import "style/mustard-ui/src/scss/vars/colors.scss";
+
+  h1, h2 {
+    color: $color-gray-800;
+    padding: 0 1rem;
   }
-  .selector {
-    background: #e67e22;
-    /* display: flex;
-    flex-flow: row;
-    align-items: top;
-    justify-content: space-around; */
+
+  .hero {
+    background-color: $color-amber-500;
     padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem 0 0;
   }
 </style>
 
 <main>
-  <section class="section">
-    <div class="">
-      <div class="">
-        <h1>Highly specialized JSON Editor</h1>
+  <section class="container">
+    <h1 class="h4">Highly specialized JSON Editor</h1>
+
+    <div class="row hero">
+      <div class="col-sm-4">
+        <FamilySelector />
+        <SpecieSelector {selectedFamily} {selectedSpecie} />
       </div>
-      <div class="selector">
-        <div class="">
-          <FamilySelector />
-          <SpecieSelector {selectedFamily} {selectedSpecie} />
-        </div>
-        <div class="">
-          {#if $json.scientific_name}
-            <div class="">
-              <h2>{$json.scientific_name}</h2>
-            </div>
-          {/if}
-        </div>
+      <div class="col-sm-8">
+        {#if $json.scientific_name}
+          <h2 class="h4">{$json.scientific_name}</h2>
+        {/if}
       </div>
     </div>
   </section>
-  <section class="">
-    <div class="">
-      <div class="">
+  <section class="container">
+    <div class="row">
+      <div class="col-sm-12">
         <JsonEditor />
         <Exporter />
       </div>

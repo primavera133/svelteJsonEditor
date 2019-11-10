@@ -49,8 +49,15 @@
   };
 </script>
 
+<style type="text/scss">
+
+.editors {
+  padding: 0 1rem;
+}
+</style>
+
 {#if $json.scientific_name}
-  <div class="">
+  <div class="editors">
     <EditableTextLine key="scientific_name" />
     <EditableTextList key="local_names" />
     <EditableTextArea key="description" />

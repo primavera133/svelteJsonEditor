@@ -1,0 +1,33 @@
+/*** CUSTOM STYLES ***/
+label {
+  font-weight: bold;
+  text-transform: capitalize;
+  /* display: block; */
+}
+
+input,
+textarea {
+  margin: 0.5rem 0 2rem;
+  width: 100%;
+}
+textarea {
+  display: block;
+}
+
+fieldset {
+  margin: 0 0 2rem;
+  padding: 0;
+  border: none;
+}
+
+
+// @mixin button-primary-text {
+
+// }
+
+// .button-primary-text {
+//   background: none;
+//   border: none;
+//   padding: 0;
+//   text-align: left;
+// }
