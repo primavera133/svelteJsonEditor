@@ -1,15 +1,13 @@
 <script>
   import { getContext } from "svelte";
-  import { json } from "./stores.js";
-  import { EDITOR } from "./JsonEditor.svelte";
-  const { handleChange, selected } = getContext(EDITOR);
-
+  import { json, openField } from "./stores.js";
+  
   export let key;
   export let open = false;
   export let selectors;
   let selectedValue = {};
 
-  $: open = $selected === key;
+  $: open = $openField === key;
 
   function getLabel() {
     return key.replace("_", " ");
@@ -17,6 +15,10 @@
 
   function getTruncatedValue() {
     return JSON.stringify($json[key]).replace(/[{}"]/g, "");
+  }
+
+  function handleChange(key) {
+    $openField = key;
   }
 
   function handleSelect(_key) {
@@ -44,9 +46,7 @@
 </style>
 
 {#if !open}
-  <button
-    class="truncate button-primary-text"
-    on:click={handleChange.bind(null, key)}>
+  <button class="truncate button-primary-text" on:click={() => handleChange(key)}>
     <label>{getLabel()}</label>
     : {getTruncatedValue()}
   </button>
@@ -54,7 +54,7 @@
   <fieldset>
     <button
       class="truncate button-primary-text"
-      on:click={() => ($selected = null)}>
+      on:click={() => ($openField = null)}>
       <label>{key}</label>
     </button>
     <ul>
@@ -85,7 +85,7 @@
     </ul>
     <button
       class="close button-primary-text"
-      on:click={() => ($selected = null)}>
+      on:click={() => ($openField = null)}>
       Close
     </button>
   </fieldset>

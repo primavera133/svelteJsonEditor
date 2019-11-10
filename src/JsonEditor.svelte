@@ -1,7 +1,3 @@
-<script context="module">
-  export const EDITOR = {};
-</script>
-
 <script>
   import { setContext } from "svelte";
   import EditableTextArea from "./EditableTextArea.svelte";
@@ -9,18 +5,6 @@
   import EditableTextList from "./EditableTextList.svelte";
   import EditableObjectList from "./EditableObjectList.svelte";
   import { json } from "./stores.js";
-  import { writable } from "svelte/store";
-
-  const selected = writable(null);
-
-  const handleChange = function(newValue) {
-    selected.set(newValue);
-  };
-
-  setContext(EDITOR, {
-    handleChange,
-    selected
-  });
 
   const redListOptions = [
     "Not evaluated",
