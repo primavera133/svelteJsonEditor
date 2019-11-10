@@ -3,6 +3,7 @@
   import { getContext } from "svelte";
 
   export let selectedFamily;
+  export let selectedSpecie;
   let selected;
 
   let species = [];
@@ -29,14 +30,12 @@
 
 {#if selectedFamily}
   <div class="select select-specie">
-    <select
-      id="species"
-      value={selected}
-      bind:value={selected}
-      on:change={handleChange}>
+    <select id="species" bind:value={selected} on:change={handleChange}>
       <option>Välj en art inom {selectedFamily}</option>
       {#each species as specie}
-        <option value={specie}>{specie}</option>
+        <option 
+        selected={specie === selectedSpecie}
+        value={specie}>{specie}</option>
       {/each}
     </select>
   </div>

@@ -23,41 +23,23 @@
 </script>
 
 <style>
-  .truncate {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  label {
-    font-weight: bold;
-    text-transform: capitalize;
-  }
   input {
     margin: 0.5rem 0 0;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-  }
-  li {
-    padding: 0;
-  }
-  fieldset {
-      margin: 0 0 2rem;
-      padding: 0;
-      border: none;
   }
 </style>
 
 {#if !open}
-  <p class="truncate" on:click={handleChange.bind(null, key)}>
+  <button
+    class="truncate btn-invisible"
+    on:click={handleChange.bind(null, key)}>
     <label>{getLabel()}</label>
     : {$json[key]}
-  </p>
+  </button>
 {:else}
   <fieldset>
-    <label for={`input_text_${key}`}>{key}</label>
+    <button class="btn-invisible" on:click={() => ($selected = null)}>
+      <label for={`input_text_${key}`}>{key}</label>
+    </button>
     <ul>
       {#each $json[key] as name, i}
         <li>
@@ -71,5 +53,6 @@
       {/each}
     </ul>
     <button type="button" on:click={handleAdd}>Add name +</button>
+    <button on:click={() => ($selected = null)}>Close</button>
   </fieldset>
 {/if}

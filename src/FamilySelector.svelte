@@ -19,7 +19,6 @@
 <div class="select">
   <select
     id="family"
-    value={selected}
     bind:value={selected}
     on:change={handleChange}>
     <option>Välj en familj</option>

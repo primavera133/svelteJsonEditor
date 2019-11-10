@@ -7,6 +7,7 @@
   import EditableTextArea from "./EditableTextArea.svelte";
   import EditableTextLine from "./EditableTextLine.svelte";
   import EditableTextList from "./EditableTextList.svelte";
+  import EditableObjectList from "./EditableObjectList.svelte";
   import { json } from "./stores.js";
   import { writable } from "svelte/store";
 
@@ -20,6 +21,32 @@
     handleChange,
     selected
   });
+
+  const redListOptions = [
+    "Not evaluated",
+    "Data deficient",
+    "Least Concern",
+    "Near threatened",
+    "Vulnerable",
+    "Endangered",
+    "Critically endangered",
+    "Extinct in the wild",
+    "Extinct"
+  ];
+
+  const trendOptions = ["Increasing", "Stable", "Decreasing"];
+
+  const booleanOptions = ["Yes", "No"];
+
+  const redListSelectors = {
+    habitats_directive: ["No", "IV"],
+    red_list_EU27: redListOptions,
+    red_list_europe: redListOptions,
+    red_list_mediterranean: redListOptions,
+    EU27_endemic: booleanOptions,
+    red_list_europe_endemic: booleanOptions,
+    trend_europe: trendOptions
+  };
 </script>
 
 {#if $json.scientific_name}
@@ -29,9 +56,9 @@
     <EditableTextArea key="description" />
     <EditableTextArea key="behaviour" />
     <EditableTextArea key="habitat" />
-    <!-- <EditableText label={'Size'} text={$json.size} /> -->
-    <!-- <EditableTextList label={'Similar species'} text={$json.similar_species} /> -->
+    <EditableObjectList key="size" selectors={null} />
+    <EditableTextList key="similar_species" />
     <EditableTextLine key="flight_period" />
-    <!-- <EditableText label={'Red list'} text={$json.red_list} /> -->
+    <EditableObjectList key="red_list" selectors={redListSelectors} />
   </div>
 {/if}

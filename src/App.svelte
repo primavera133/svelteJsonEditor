@@ -12,15 +12,24 @@
   let scientific_name = "";
 
   setContext("family", {
-    setFamily: value => (selectedFamily = value)
+    setFamily: value => {
+      selectedFamily = value;
+      selectedSpecie = "";
+      json.set({});
+    }
   });
   setContext("specie", {
-    setSpecie: value => (selectedSpecie = value)
+    setSpecie: value => {
+      selectedSpecie = value;
+      json.set({});
+    }
   });
 
   $: {
     if (selectedFamily && selectedSpecie) {
-      getJson({ family: selectedFamily, species: selectedSpecie }).then(data => json.set(data));
+      getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
+        json.set(data)
+      );
     }
   }
 </script>
@@ -48,7 +57,7 @@
       <div class="selector">
         <div class="">
           <FamilySelector />
-          <SpecieSelector {selectedFamily} />
+          <SpecieSelector {selectedFamily} {selectedSpecie} />
         </div>
         <div class="">
           {#if $json.scientific_name}
@@ -64,7 +73,7 @@
     <div class="">
       <div class="">
         <JsonEditor />
-		<Exporter />
+        <Exporter />
       </div>
     </div>
   </section>

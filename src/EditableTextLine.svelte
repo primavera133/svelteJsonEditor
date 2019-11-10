@@ -14,33 +14,23 @@
   }
 </script>
 
-<style>
-  .truncate {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  label {
-    font-weight: bold;
-    text-transform: capitalize;
-  }
-  input {
-    margin: .5rem 0 2rem;
-  }
-</style>
-
 {#if !open}
-  <p class="truncate" on:click={handleChange.bind(null, key)}>
+  <button class="truncate btn-invisible" on:click={handleChange.bind(null, key)}>
     <label>{getLabel()}</label>
     : {$json[key]}
-  </p>
+  </button>
 {:else}
-  <label for={`input_text_${key}`}>{key}</label>
-  <input
-    type="text"
-    id={`input_text_${key}`}
-    name={key}
-    bind:value={$json[key]}
-    class="" />
+  <fieldset>
+    <button class="btn-invisible" on:click={() => ($selected = null)}>
+    <label for={`input_text_${key}`}>{key}</label>
+    </button>
+    <input
+      type="text"
+      id={`input_text_${key}`}
+      name={key}
+      bind:value={$json[key]}
+      class="" />
+    <button on:click={() => ($selected = null)}>Close</button>
+
+  </fieldset>
 {/if}
