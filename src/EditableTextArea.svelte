@@ -43,9 +43,7 @@
       on:click={() => ($openField = null)}>
       <label for={`input_text_${key}`}>{key}</label>
     </button>
-    <textarea id={`input_text_${key}`} name={key} class="" rows={12}>
-      {$json[key]}
-    </textarea>
+    <textarea id={`input_text_${key}`} name={key} class="" rows={12} bind:value={$json[key]}></textarea>
     <button
       class="close button-primary-text"
       on:click={() => ($openField = null)}>
