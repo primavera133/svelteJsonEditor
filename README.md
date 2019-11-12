@@ -3,3 +3,6 @@ So I wanted to build a specialized tool to edit these JSON files that I use for 
 So this is it.
 
 A pretty specialized tool.
+
+Try it out at https://myrenas.se/svelteJsonEditor/public/index.html
+
