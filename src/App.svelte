@@ -54,7 +54,7 @@
 
 <main>
   <section class="container">
-    <h1 class="h4">Highly specialized JSON Editor</h1>
+    <h1 class="h4">Dragonfly API JSON Editor</h1>
 
     <div class="row hero">
       <div class="col-sm-4">
