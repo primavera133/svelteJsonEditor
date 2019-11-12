@@ -36,7 +36,7 @@
   "description": "A starter CSS framework that actually looks good.",
   "devDependencies": {
     "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
