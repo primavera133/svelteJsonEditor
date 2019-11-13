@@ -1,12 +1,17 @@
 <script>
-  import { json } from "./stores.js";
+  import { json, savedSpecie } from "./stores.js";
+
+  let item = null;
+  $: if ($json.items_id || $savedSpecie === $json.items) {
+    item = window.localStorage.getItem($json.items_id);
+  }
 
   function handleRecover() {
-      const item = window.localStorage.getItem($json.items_id)
-      json.set(JSON.parse(item))
+    const item = window.localStorage.getItem($json.items_id);
+    json.set(JSON.parse(item));
   }
 </script>
 
-{#if $json.items_id}
+{#if item}
   <button on:click={handleRecover}>Recover</button>
 {/if}
