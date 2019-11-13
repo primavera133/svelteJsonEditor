@@ -46,6 +46,7 @@
     <EditableTextList key="local_names" />
     <EditableTextArea key="description" />
     <EditableTextArea key="behaviour" />
+    <EditableTextArea key="distribution" />
     <EditableTextArea key="habitat" />
     <EditableObjectList key="size" selectors={null} />
     <EditableTextList key="similar_species" />

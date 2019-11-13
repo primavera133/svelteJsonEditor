@@ -5,6 +5,9 @@
   import SpecieSelector from "./SpecieSelector.svelte";
   import JsonEditor from "./JsonEditor.svelte";
   import Exporter from "./Exporter.svelte";
+  import Save from "./Save.svelte";
+  import Recover from "./Recover.svelte";
+  import Reset from "./Reset.svelte";
   import { json } from "./stores.js";
 
   let selectedFamily = "";
@@ -37,7 +40,8 @@
 <style type="text/scss">
   @import "style/mustard-ui/src/scss/vars/colors.scss";
 
-  h1, h2 {
+  h1,
+  h2 {
     color: $color-gray-800;
     padding: 0 1rem;
   }
@@ -72,7 +76,13 @@
     <div class="row">
       <div class="col-sm-12">
         <JsonEditor />
-        <Exporter />
+
+        <div>
+          <Exporter />
+          <Save />
+          <Recover />
+          <Reset {selectedFamily} {selectedSpecie} />
+        </div>
       </div>
     </div>
   </section>
