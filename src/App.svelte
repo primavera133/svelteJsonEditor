@@ -8,7 +8,7 @@
   import Save from "./Save.svelte";
   import Recover from "./Recover.svelte";
   import Reset from "./Reset.svelte";
-  import { json } from "./stores.js";
+  import { json, savedSpecie } from "./stores.js";
 
   let selectedFamily = "";
   let selectedSpecie = "";
@@ -26,6 +26,26 @@
       selectedSpecie = value;
       json.set({});
     }
+  });
+
+  onMount(() => {
+    const S_KEY_CODE = 83;
+    document.addEventListener(
+      "keydown",
+      function(e) {
+        if (
+          (window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) &&
+          e.keyCode == S_KEY_CODE
+        ) {
+          e.preventDefault();
+          if ($json.items_id) {
+            window.localStorage.setItem($json.items_id, JSON.stringify($json));
+            savedSpecie.set($json.items_id);
+          }
+        }
+      },
+      false
+    );
   });
 
   $: {

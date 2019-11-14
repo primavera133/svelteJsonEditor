@@ -114,6 +114,9 @@ var app = (function () {
             throw new Error(`Function called outside component initialization`);
         return current_component;
     }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
     function setContext(key, context) {
         get_current_component().$$.context.set(key, context);
     }
@@ -4759,7 +4762,7 @@ var app = (function () {
 
     const file$b = "src/App.svelte";
 
-    // (64:8) {#if $json.scientific_name}
+    // (84:8) {#if $json.scientific_name}
     function create_if_block$a(ctx) {
     	var h2, t_value = ctx.$json.scientific_name + "", t;
 
@@ -4768,7 +4771,7 @@ var app = (function () {
     			h2 = element("h2");
     			t = text(t_value);
     			attr_dev(h2, "class", "h4 svelte-tgntz1");
-    			add_location(h2, file$b, 64, 10, 1532);
+    			add_location(h2, file$b, 84, 10, 2039);
     		},
 
     		m: function mount(target, anchor) {
@@ -4788,7 +4791,7 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(64:8) {#if $json.scientific_name}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(84:8) {#if $json.scientific_name}", ctx });
     	return block;
     }
 
@@ -4853,23 +4856,23 @@ var app = (function () {
     			t8 = space();
     			reset.$$.fragment.c();
     			attr_dev(h1, "class", "h4 svelte-tgntz1");
-    			add_location(h1, file$b, 55, 4, 1253);
+    			add_location(h1, file$b, 75, 4, 1760);
     			attr_dev(div0, "class", "col-sm-4");
-    			add_location(div0, file$b, 58, 6, 1333);
+    			add_location(div0, file$b, 78, 6, 1840);
     			attr_dev(div1, "class", "col-sm-8");
-    			add_location(div1, file$b, 62, 6, 1463);
+    			add_location(div1, file$b, 82, 6, 1970);
     			attr_dev(div2, "class", "row hero svelte-tgntz1");
-    			add_location(div2, file$b, 57, 4, 1304);
+    			add_location(div2, file$b, 77, 4, 1811);
     			attr_dev(section0, "class", "container svelte-tgntz1");
-    			add_location(section0, file$b, 54, 2, 1221);
-    			add_location(div3, file$b, 74, 8, 1741);
+    			add_location(section0, file$b, 74, 2, 1728);
+    			add_location(div3, file$b, 94, 8, 2248);
     			attr_dev(div4, "class", "col-sm-12");
-    			add_location(div4, file$b, 71, 6, 1685);
+    			add_location(div4, file$b, 91, 6, 2192);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$b, 70, 4, 1661);
+    			add_location(div5, file$b, 90, 4, 2168);
     			attr_dev(section1, "class", "container svelte-tgntz1");
-    			add_location(section1, file$b, 69, 2, 1629);
-    			add_location(main, file$b, 53, 0, 1212);
+    			add_location(section1, file$b, 89, 2, 2136);
+    			add_location(main, file$b, 73, 0, 1719);
     		},
 
     		l: function claim(nodes) {
@@ -5012,6 +5015,26 @@ var app = (function () {
           $$invalidate('selectedSpecie', selectedSpecie = value);
           json.set({});
         }
+      });
+
+      onMount(() => {
+        const S_KEY_CODE = 83;
+        document.addEventListener(
+          "keydown",
+          function(e) {
+            if (
+              (window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) &&
+              e.keyCode == S_KEY_CODE
+            ) {
+              e.preventDefault();
+              if ($json.items_id) {
+                window.localStorage.setItem($json.items_id, JSON.stringify($json));
+                savedSpecie.set($json.items_id);
+              }
+            }
+          },
+          false
+        );
       });
 
     	$$self.$capture_state = () => {
