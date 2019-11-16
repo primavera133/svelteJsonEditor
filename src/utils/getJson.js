@@ -11,7 +11,7 @@ function normalize (data) {
     'flight_period'
   ]
   strKeys.forEach(key => {
-    if (!data[strKeys]) data[key] = ''
+    if (!data[key]) data[key] = ''
   })
 
   if (!data.size) {
@@ -42,20 +42,17 @@ function normalize (data) {
 
 export const getJson = ({ family, species }) => {
   return new Promise((resolve, reject) => {
+    if (!family || !species || !family.length || !species.length) {
+      return
+    }
+
     try {
       const url = `${config.baseUrl}${family}/${species}.json`
       axios
         .get(url)
-        .then(response => {
-          console.log(1111)
-          resolve(normalize(response.data))
-        })
-        .catch(e => {
-          console.log(2222)
-          resolve(initialJson)
-        })
+        .then(response => resolve(normalize(response.data)))
+        .catch(e => resolve(initialJson))
     } catch (error) {
-      console.log(3333)
       resolve(initialJson)
     }
   })

@@ -19,7 +19,7 @@
 
 <div class="select">
   <select id="family" bind:value={selected} on:change={handleChange}>
-    <option>Välj en familj</option>
+    <option value="">Välj en familj</option>
     {#each families as family}
       <option value={family}>{family}</option>
     {/each}

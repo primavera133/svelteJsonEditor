@@ -49,11 +49,12 @@
   });
 
   $: {
-    if (selectedFamily && selectedSpecie) {
-      getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
-        json.set(data)
-      );
-    }
+    getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
+      json.set(data)
+    );
+    // .catch(e => {
+    //   // console.log(e);
+    // });
   }
 </script>
 

@@ -33,9 +33,9 @@
     <select id="species" bind:value={selected} on:change={handleChange}>
       <option>Välj en art inom {selectedFamily}</option>
       {#each species as specie}
-        <option 
-        selected={specie === selectedSpecie}
-        value={specie}>{specie}</option>
+        <option selected={specie === selectedSpecie} value={specie}>
+          {specie}
+        </option>
       {/each}
     </select>
   </div>

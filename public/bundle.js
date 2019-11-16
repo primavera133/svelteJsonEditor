@@ -1971,7 +1971,7 @@ var app = (function () {
         'flight_period'
       ];
       strKeys.forEach(key => {
-        if (!data[strKeys]) data[key] = '';
+        if (!data[key]) data[key] = '';
       });
 
       if (!data.size) {
@@ -2002,20 +2002,17 @@ var app = (function () {
 
     const getJson = ({ family, species }) => {
       return new Promise((resolve, reject) => {
+        if (!family || !species || !family.length || !species.length) {
+          return
+        }
+
         try {
           const url = `${config.baseUrl}${family}/${species}.json`;
           axios$1
             .get(url)
-            .then(response => {
-              console.log(1111);
-              resolve(normalize(response.data));
-            })
-            .catch(e => {
-              console.log(2222);
-              resolve(initialJson);
-            });
+            .then(response => resolve(normalize(response.data)))
+            .catch(e => resolve(initialJson));
         } catch (error) {
-          console.log(3333);
           resolve(initialJson);
         }
       })
@@ -2042,7 +2039,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = ctx.family;
     			option.value = option.__value;
-    			add_location(option, file, 23, 6, 447);
+    			add_location(option, file, 23, 6, 456);
     		},
 
     		m: function mount(target, anchor) {
@@ -2083,7 +2080,7 @@ var app = (function () {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
-    			option.__value = "Välj en familj";
+    			option.__value = "";
     			option.value = option.__value;
     			add_location(option, file, 21, 4, 378);
     			if (ctx.selected === void 0) add_render_callback(() => ctx.select_change_handler.call(select));
@@ -2314,12 +2311,13 @@ var app = (function () {
 
     // (35:6) {#each species as specie}
     function create_each_block$1(ctx) {
-    	var option, t_value = ctx.specie + "", t, option_selected_value, option_value_value;
+    	var option, t0_value = ctx.specie + "", t0, t1, option_selected_value, option_value_value;
 
     	const block = {
     		c: function create() {
     			option = element("option");
-    			t = text(t_value);
+    			t0 = text(t0_value);
+    			t1 = space();
     			option.selected = option_selected_value = ctx.specie === ctx.selectedSpecie;
     			option.__value = option_value_value = ctx.specie;
     			option.value = option.__value;
@@ -2328,12 +2326,13 @@ var app = (function () {
 
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
-    			append_dev(option, t);
+    			append_dev(option, t0);
+    			append_dev(option, t1);
     		},
 
     		p: function update(changed, ctx) {
-    			if ((changed.species) && t_value !== (t_value = ctx.specie + "")) {
-    				set_data_dev(t, t_value);
+    			if ((changed.species) && t0_value !== (t0_value = ctx.specie + "")) {
+    				set_data_dev(t0, t0_value);
     			}
 
     			if ((changed.species || changed.selectedSpecie) && option_selected_value !== (option_selected_value = ctx.specie === ctx.selectedSpecie)) {
@@ -4945,7 +4944,7 @@ var app = (function () {
 
     const file$b = "src/App.svelte";
 
-    // (84:8) {#if $json.scientific_name}
+    // (85:8) {#if $json.scientific_name}
     function create_if_block$a(ctx) {
     	var h2, t_value = ctx.$json.scientific_name + "", t;
 
@@ -4954,7 +4953,7 @@ var app = (function () {
     			h2 = element("h2");
     			t = text(t_value);
     			attr_dev(h2, "class", "h4 svelte-tgntz1");
-    			add_location(h2, file$b, 84, 10, 2039);
+    			add_location(h2, file$b, 85, 10, 2043);
     		},
 
     		m: function mount(target, anchor) {
@@ -4974,7 +4973,7 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(84:8) {#if $json.scientific_name}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(85:8) {#if $json.scientific_name}", ctx });
     	return block;
     }
 
@@ -5039,23 +5038,23 @@ var app = (function () {
     			t8 = space();
     			reset.$$.fragment.c();
     			attr_dev(h1, "class", "h4 svelte-tgntz1");
-    			add_location(h1, file$b, 75, 4, 1760);
+    			add_location(h1, file$b, 76, 4, 1764);
     			attr_dev(div0, "class", "col-sm-4");
-    			add_location(div0, file$b, 78, 6, 1840);
+    			add_location(div0, file$b, 79, 6, 1844);
     			attr_dev(div1, "class", "col-sm-8");
-    			add_location(div1, file$b, 82, 6, 1970);
+    			add_location(div1, file$b, 83, 6, 1974);
     			attr_dev(div2, "class", "row hero svelte-tgntz1");
-    			add_location(div2, file$b, 77, 4, 1811);
+    			add_location(div2, file$b, 78, 4, 1815);
     			attr_dev(section0, "class", "container svelte-tgntz1");
-    			add_location(section0, file$b, 74, 2, 1728);
-    			add_location(div3, file$b, 94, 8, 2248);
+    			add_location(section0, file$b, 75, 2, 1732);
+    			add_location(div3, file$b, 95, 8, 2252);
     			attr_dev(div4, "class", "col-sm-12");
-    			add_location(div4, file$b, 91, 6, 2192);
+    			add_location(div4, file$b, 92, 6, 2196);
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file$b, 90, 4, 2168);
+    			add_location(div5, file$b, 91, 4, 2172);
     			attr_dev(section1, "class", "container svelte-tgntz1");
-    			add_location(section1, file$b, 89, 2, 2136);
-    			add_location(main, file$b, 73, 0, 1719);
+    			add_location(section1, file$b, 90, 2, 2140);
+    			add_location(main, file$b, 74, 0, 1723);
     		},
 
     		l: function claim(nodes) {
@@ -5233,11 +5232,12 @@ var app = (function () {
 
     	$$self.$$.update = ($$dirty = { selectedFamily: 1, selectedSpecie: 1 }) => {
     		if ($$dirty.selectedFamily || $$dirty.selectedSpecie) { {
-            if (selectedFamily && selectedSpecie) {
-              getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
-                json.set(data)
-              );
-            }
+            getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
+              json.set(data)
+            );
+            // .catch(e => {
+            //   // console.log(e);
+            // });
           } }
     	};
 
