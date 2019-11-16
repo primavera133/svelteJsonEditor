@@ -75,11 +75,24 @@
   .container {
     padding: 1rem 0 0;
   }
+
+  .heading {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  .heading img {
+    max-width: 48px;
+  }
 </style>
 
 <main>
   <section class="container">
-    <h1 class="h4">Dragonfly API JSON Editor</h1>
+    <div class="heading">
+      <img src="/libellula-bw.png" alt="libellula" />
+      <h1 class="h4">Dragonfly API JSON Editor</h1>
+    </div>
 
     <div class="row hero">
       <div class="col-sm-4">
