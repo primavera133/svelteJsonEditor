@@ -6,7 +6,7 @@
   export let selectedSpecie = "";
 
   let item = null;
-  $: if ($json.items_id || $savedSpecie === $json.items) {
+  $: if ($json.items_id || $savedSpecie === $json.items) {
     item = window.localStorage.getItem($json.items_id);
   }
 

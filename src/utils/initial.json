@@ -1,0 +1,24 @@
+{
+    "items_id": "",
+    "scientific_name": "",
+    "local_names": [],
+    "description": "",
+    "behaviour": "",
+    "size": {
+        "length": "mm",
+        "wingspan": " mm"
+    },
+    "similar_species": [],
+    "distribution": "",
+    "habitat": "",
+    "flight_period": "",
+    "red_list": {
+        "habitats_directive": "",
+        "red_list_EU27": "",
+        "red_list_europe": "",
+        "red_list_mediterranean": "",
+        "EU27_endemic": "",
+        "red_list_europe_endemic": "",
+        "trend_europe": ""
+    }
+}

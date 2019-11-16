@@ -440,6 +440,102 @@ var app = (function () {
         'erythromma-lindenii',
         'erythromma-najas',
         'erythromma-viridulum'
+      ],
+      cordulegastridae: [
+        'cordulegaster-bidentata',
+        'cordulegaster-boltonii',
+        'cordulegaster-helladica',
+        'cordulegaster-heros',
+        'cordulegaster-insignis',
+        'cordulegaster-picta',
+        'cordulegaster-trinacriae'
+      ],
+      corduliidae: [
+        'macromia-splendens',
+        'cordulia-aenea',
+        'epitheca-bimaculata',
+        'oxygastra-curtisii',
+        'somatochlora-alpestris',
+        'somatochlora-arctica',
+        'somatochlora-borisi',
+        'somatochlora-flavomaculata',
+        'somatochlora-meridionalis',
+        'somatochlora-metallica',
+        'somatochlora-sahlbergi'
+      ],
+      euphaeidae: ['epallage-fatime'],
+      gomphidae: [
+        'lindenia-tetraphylla',
+        'gomphus-flavipes',
+        'gomphus-graslinii',
+        'gomphus-pulchellus',
+        'gomphus-schneiderii',
+        'gomphus-simillimus',
+        'gomphus-vulgatissimus',
+        'onychogomphus-costae',
+        'onychogomphus-forcipatus',
+        'onychogomphus-uncatus',
+        'ophiogomphus-cecilia',
+        'paragomphus-genei'
+      ],
+      lestidae: [
+        'chalcolestes-parvidens',
+        'chalcolestes-viridis',
+        'lestes-barbarus',
+        'lestes-dryas',
+        'lestes-macrostigma',
+        'lestes-sponsa',
+        'lestes-virens',
+        'sympecma-fusca',
+        'sympecma-paedisca'
+      ],
+      libellulidae: [
+        'brachythemis-impartita',
+        'crocothemis-erythraea',
+        'leucorrhinia-albifrons',
+        'brachythemis-impartita',
+        'crocothemis-erythraea',
+        'leucorrhinia-albifrons',
+        'leucorrhinia-caudalis',
+        'leucorrhinia-dubia',
+        'leucorrhinia-pectoralis',
+        'leucorrhinia-rubicunda',
+        'libellula-depressa',
+        'libellula-fulva',
+        'libellula-quadrimaculata',
+        'orthetrum-albistylum',
+        'orthetrum-brunneum',
+        'orthetrum-cancellatum',
+        'orthetrum-chrysostigma',
+        'orthetrum-coerulescens',
+        'orthetrum-nitidinerve',
+        'orthetrum-sabina',
+        'orthetrum-taeniolatum',
+        'orthetrum-trinacria',
+        'pantala-flaviscens',
+        'selysiothemis-nigra',
+        'sympetrum-danae',
+        'sympetrum-depressiculum',
+        'sympetrum-flaveolum',
+        'sympetrum-fonscolombii',
+        'sympetrum-lefebvrii',
+        'sympetrum-meridionale',
+        'sympetrum-nigrifemur',
+        'sympetrum-pedemontanum',
+        'sympetrum-sanguineum',
+        'sympetrum-sinaiticum',
+        'sympetrum-striolatum',
+        'sympetrum-vulgatum',
+        'thrithemis-annulata',
+        'thrithemis-arteriosa',
+        'thrithemis-festiva',
+        'thrithemis-kirbyi',
+        'zygonyx-torridus'
+      ],
+      platychnemididae: [
+        'platychnemis-acutipennis',
+        'platychnemis-latipes',
+        'platychnemis-pennipes'
       ]
     };
 
@@ -1828,13 +1924,100 @@ var app = (function () {
 
     var axios$1 = axios_1;
 
+    var items_id = "";
+    var scientific_name = "";
+    var local_names = [
+    ];
+    var description = "";
+    var behaviour = "";
+    var size = {
+    	length: "mm",
+    	wingspan: " mm"
+    };
+    var similar_species = [
+    ];
+    var distribution = "";
+    var habitat = "";
+    var flight_period = "";
+    var red_list = {
+    	habitats_directive: "",
+    	red_list_EU27: "",
+    	red_list_europe: "",
+    	red_list_mediterranean: "",
+    	EU27_endemic: "",
+    	red_list_europe_endemic: "",
+    	trend_europe: ""
+    };
+    var initialJson = {
+    	items_id: items_id,
+    	scientific_name: scientific_name,
+    	local_names: local_names,
+    	description: description,
+    	behaviour: behaviour,
+    	size: size,
+    	similar_species: similar_species,
+    	distribution: distribution,
+    	habitat: habitat,
+    	flight_period: flight_period,
+    	red_list: red_list
+    };
+
+    function normalize (data) {
+      const strKeys = [
+        'behaviour',
+        'description',
+        'distribution',
+        'habitat',
+        'flight_period'
+      ];
+      strKeys.forEach(key => {
+        if (!data[strKeys]) data[key] = '';
+      });
+
+      if (!data.size) {
+        data.size = {
+          length: 'mm',
+          wingspan: 'mm'
+        };
+      }
+
+      if (!data.similar_species) {
+        data.similar_species = [];
+      }
+
+      if (!data.red_list) {
+        data.red_list = {
+          habitats_directive: '',
+          red_list_EU27: '',
+          red_list_europe: '',
+          red_list_mediterranean: '',
+          EU27_endemic: '',
+          red_list_europe_endemic: '',
+          trend_europe: ''
+        };
+      }
+
+      return data
+    }
+
     const getJson = ({ family, species }) => {
       return new Promise((resolve, reject) => {
-        const url = `${config.baseUrl}${family}/${species}.json`;
-        axios$1.get(url).then(response => {
-          resolve(response.data);
-        })
-        .catch(reject);
+        try {
+          const url = `${config.baseUrl}${family}/${species}.json`;
+          axios$1
+            .get(url)
+            .then(response => {
+              console.log(1111);
+              resolve(normalize(response.data));
+            })
+            .catch(e => {
+              console.log(2222);
+              resolve(initialJson);
+            });
+        } catch (error) {
+          console.log(3333);
+          resolve(initialJson);
+        }
       })
     };
 
@@ -1849,7 +2032,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (25:4) {#each families as family}
+    // (23:4) {#each families as family}
     function create_each_block(ctx) {
     	var option, t_value = ctx.family + "", t;
 
@@ -1859,7 +2042,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = ctx.family;
     			option.value = option.__value;
-    			add_location(option, file, 25, 6, 458);
+    			add_location(option, file, 23, 6, 447);
     		},
 
     		m: function mount(target, anchor) {
@@ -1875,7 +2058,7 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(25:4) {#each families as family}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(23:4) {#each families as family}", ctx });
     	return block;
     }
 
@@ -1902,12 +2085,12 @@ var app = (function () {
     			}
     			option.__value = "Välj en familj";
     			option.value = option.__value;
-    			add_location(option, file, 23, 4, 389);
+    			add_location(option, file, 21, 4, 378);
     			if (ctx.selected === void 0) add_render_callback(() => ctx.select_change_handler.call(select));
     			attr_dev(select, "id", "family");
-    			add_location(select, file, 19, 2, 305);
+    			add_location(select, file, 20, 2, 306);
     			attr_dev(div, "class", "select");
-    			add_location(div, file, 18, 0, 282);
+    			add_location(div, file, 19, 0, 283);
 
     			dispose = [
     				listen_dev(select, "change", ctx.select_change_handler),
@@ -4721,7 +4904,7 @@ var app = (function () {
     	};
 
     	$$self.$$.update = ($$dirty = { $json: 1, $savedSpecie: 1 }) => {
-    		if ($$dirty.$json || $$dirty.$savedSpecie) { if ($json.items_id || $savedSpecie === $json.items) {
+    		if ($$dirty.$json || $$dirty.$savedSpecie) { if ($json.items_id || $savedSpecie === $json.items) {
             $$invalidate('item', item = window.localStorage.getItem($json.items_id));
           } }
     	};
@@ -4990,7 +5173,7 @@ var app = (function () {
     	return block;
     }
 
-    let scientific_name = "";
+    let scientific_name$1 = "";
 
     function instance$b($$self, $$props, $$invalidate) {
     	let $json;
@@ -5044,7 +5227,7 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ('selectedFamily' in $$props) $$invalidate('selectedFamily', selectedFamily = $$props.selectedFamily);
     		if ('selectedSpecie' in $$props) $$invalidate('selectedSpecie', selectedSpecie = $$props.selectedSpecie);
-    		if ('scientific_name' in $$props) scientific_name = $$props.scientific_name;
+    		if ('scientific_name' in $$props) scientific_name$1 = $$props.scientific_name;
     		if ('$json' in $$props) json.set($json);
     	};
 
