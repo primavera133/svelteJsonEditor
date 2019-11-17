@@ -46,14 +46,13 @@ export const getJson = ({ family, species }) => {
       return
     }
 
-    try {
-      const url = `${config.baseUrl}${family}/${species}.json`
-      axios
-        .get(url)
-        .then(response => resolve(normalize(response.data)))
-        .catch(e => resolve(initialJson))
-    } catch (error) {
-      resolve(initialJson)
-    }
+    const url = `${config.baseUrl}${family}/${species}.json`
+    axios
+      .get(url)
+      .then(response => resolve(normalize(response.data)))
+      .catch(e => {
+        console.log(555, initialJson)
+        resolve(initialJson)
+      })
   })
 }

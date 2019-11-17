@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { json, openField } from "./stores.js";
-  
+
   export let key;
   export let open = false;
   export let selectors;
@@ -46,7 +46,9 @@
 </style>
 
 {#if !open}
-  <button class="truncate button-primary-text" on:click={() => handleChange(key)}>
+  <button
+    class="truncate button-primary-text"
+    on:click={() => handleChange(key)}>
     <label>{getLabel()}</label>
     : {getTruncatedValue()}
   </button>

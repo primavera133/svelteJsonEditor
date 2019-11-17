@@ -7,37 +7,40 @@
   import { json } from "./stores.js";
 
   const redListOptions = [
+    "",
     "Not evaluated",
-    "Data deficient",
+    "Not present",
+    "Data Deficient",
     "Least Concern",
     "Near threatened",
     "Vulnerable",
     "Endangered",
+    "Endangered to Critically Endangered depending on subspecies",
     "Critically endangered",
     "Extinct in the wild",
     "Extinct"
   ];
 
-  const trendOptions = ["Increasing", "Stable", "Decreasing"];
-
-  const booleanOptions = ["Yes", "No"];
+  const habitasDirectiveOptions = ["", "No", "II", "IV", "II+IV"];
+  const endemicOptions = ["", "No", "Endemic"];
+  const trendOptions = ["", "Increasing", "Stable", "Decreasing", "Unknown"];
+  // const booleanOptions = ["Yes", "No"];
 
   const redListSelectors = {
-    habitats_directive: ["No", "IV"],
+    habitats_directive: habitasDirectiveOptions,
     red_list_EU27: redListOptions,
     red_list_europe: redListOptions,
     red_list_mediterranean: redListOptions,
-    EU27_endemic: booleanOptions,
-    red_list_europe_endemic: booleanOptions,
+    EU27_endemic: endemicOptions,
+    red_list_europe_endemic: endemicOptions,
     trend_europe: trendOptions
   };
 </script>
 
 <style type="text/scss">
-
-.editors {
-  padding: 0 1rem;
-}
+  .editors {
+    padding: 0 1rem;
+  }
 </style>
 
 {#if $json.scientific_name}
