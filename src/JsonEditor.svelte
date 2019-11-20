@@ -8,10 +8,12 @@
 
   const redListOptions = [
     "",
-    "Not evaluated",
+    "Not Evaluated",
     "Not present",
+    "Not Applicable",
     "Data Deficient",
     "Least Concern",
+    "Least Concern to Near threatened depending on subspecies",
     "Near threatened",
     "Vulnerable",
     "Endangered",
@@ -23,7 +25,14 @@
 
   const habitasDirectiveOptions = ["", "No", "II", "IV", "II+IV"];
   const endemicOptions = ["", "No", "Endemic"];
-  const trendOptions = ["", "Increasing", "Stable", "Decreasing", "Unknown"];
+  const trendOptions = [
+    "",
+    "Increasing",
+    "Stable",
+    "Decreasing",
+    "Unknown",
+    "Stable to Decreasing depending on subspecie"
+  ];
   // const booleanOptions = ["Yes", "No"];
 
   const redListSelectors = {

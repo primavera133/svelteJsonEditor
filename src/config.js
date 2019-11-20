@@ -62,15 +62,13 @@ const dataTree = {
     'cordulegaster-trinacriae'
   ],
   corduliidae: [
-    'macromia amphigena',
-    'macromia-splendens',
     'cordulia-aenea',
     'epitheca-bimaculata',
-    'oxygastra-curtisii',
     'somatochlora-alpestris',
     'somatochlora-arctica',
     'somatochlora-borisi',
     'somatochlora-flavomaculata',
+    'somatochlora-graeseri',
     'somatochlora-meridionalis',
     'somatochlora-metallica',
     'somatochlora-sahlbergi'
@@ -90,6 +88,7 @@ const dataTree = {
     'ophiogomphus-cecilia',
     'paragomphus-genei'
   ],
+  incerta_sedis: ['oxygastra-curtisii'],
   lestidae: [
     'chalcolestes-parvidens',
     'chalcolestes-viridis',
@@ -104,9 +103,7 @@ const dataTree = {
   libellulidae: [
     'brachythemis-impartita',
     'crocothemis-erythraea',
-    'leucorrhinia-albifrons',
-    'brachythemis-impartita',
-    'crocothemis-erythraea',
+    'diplacodes-lefebvrii',
     'leucorrhinia-albifrons',
     'leucorrhinia-caudalis',
     'leucorrhinia-dubia',
@@ -130,7 +127,6 @@ const dataTree = {
     'sympetrum-depressiculum',
     'sympetrum-flaveolum',
     'sympetrum-fonscolombii',
-    'sympetrum-lefebvrii',
     'sympetrum-meridionale',
     'sympetrum-nigrifemur',
     'sympetrum-pedemontanum',
@@ -144,6 +140,7 @@ const dataTree = {
     'thrithemis-kirbyi',
     'zygonyx-torridus'
   ],
+  macromiidae: ['macromia-amphigena', 'macromia-splendens'],
   platychnemididae: [
     'platychnemis-acutipennis',
     'platychnemis-latipes',

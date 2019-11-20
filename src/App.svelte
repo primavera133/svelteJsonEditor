@@ -90,7 +90,7 @@
 <main>
   <section class="container">
     <div class="heading">
-      <img src="/libellula-bw.png" alt="libellula" />
+      <img src="libellula-bw.png" alt="libellula" />
       <h1 class="h4">Dragonfly API JSON Editor</h1>
     </div>
 

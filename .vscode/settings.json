@@ -1,3 +1,19 @@
 {
-    "svelte.language-server.runtime": "/usr/local/bin/node"
+    "svelte.language-server.runtime": "/usr/local/bin/node",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#ffce3a",
+        "activityBar.activeBorder": "#009f78",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#009f78",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "titleBar.activeBackground": "#ffc107",
+        "titleBar.inactiveBackground": "#ffc10799",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveForeground": "#15202b99",
+        "statusBar.background": "#ffc107",
+        "statusBarItem.hoverBackground": "#d39e00",
+        "statusBar.foreground": "#15202b"
+    },
+    "peacock.color": "#ffc107"
 }
