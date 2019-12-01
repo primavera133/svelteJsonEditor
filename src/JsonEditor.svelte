@@ -55,6 +55,7 @@
 {#if $json.scientific_name}
   <div class="editors">
     <EditableTextLine key="scientific_name" />
+    <EditableTextLine key="author_citation" />
     <EditableTextList key="local_names" />
     <EditableTextArea key="description" />
     <EditableTextArea key="behaviour" />

@@ -121,7 +121,7 @@ const dataTree = {
     'orthetrum-sabina',
     'orthetrum-taeniolatum',
     'orthetrum-trinacria',
-    'pantala-flaviscens',
+    'pantala-flavescens',
     'selysiothemis-nigra',
     'sympetrum-danae',
     'sympetrum-depressiculum',
@@ -134,17 +134,18 @@ const dataTree = {
     'sympetrum-sinaiticum',
     'sympetrum-striolatum',
     'sympetrum-vulgatum',
-    'thrithemis-annulata',
-    'thrithemis-arteriosa',
-    'thrithemis-festiva',
-    'thrithemis-kirbyi',
+    'trithemis-annulata',
+    'trithemis-arteriosa',
+    'trithemis-festiva',
+    'trithemis-kirbyi',
     'zygonyx-torridus'
   ],
   macromiidae: ['macromia-amphigena', 'macromia-splendens'],
-  platychnemididae: [
-    'platychnemis-acutipennis',
-    'platychnemis-latipes',
-    'platychnemis-pennipes'
+  platycnemididae: [
+    'platycnemis-acutipennis',
+    'platycnemis-dealbata',
+    'platycnemis-latipes',
+    'platycnemis-pennipes'
   ]
 }
 
