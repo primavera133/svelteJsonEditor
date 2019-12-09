@@ -21,5 +21,18 @@
         "EU27_endemic": "",
         "red_list_europe_endemic": "",
         "trend_europe": ""
+    },
+    "images": {
+        "cloud_name": "dragonflies",
+        "all": [
+            {
+                "alt": "",
+                "public_id": "",
+                "license": "CC BY 3.0",
+                "lic_url": "https://creativecommons.org/licenses/by/3.0/",
+                "by": "Göran Liljeberg",
+                "url": "http://liljebergs.nu/"
+            }
+        ]
     }
 }

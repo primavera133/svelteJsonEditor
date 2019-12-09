@@ -4,6 +4,7 @@
   import EditableTextLine from "./EditableTextLine.svelte";
   import EditableTextList from "./EditableTextList.svelte";
   import EditableObjectList from "./EditableObjectList.svelte";
+  import EditableImgObj from "./EditableImgObj.svelte";
   import { json } from "./stores.js";
 
   const redListOptions = [
@@ -65,5 +66,6 @@
     <EditableTextList key="similar_species" />
     <EditableTextLine key="flight_period" />
     <EditableObjectList key="red_list" selectors={redListSelectors} />
+    <EditableImgObj key="images" />
   </div>
 {/if}
