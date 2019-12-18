@@ -26,8 +26,8 @@
         "cloud_name": "dragonflies",
         "all": [
             {
-                "alt": "",
                 "public_id": "",
+                "caption": "",
                 "license": "CC BY 3.0",
                 "lic_url": "https://creativecommons.org/licenses/by/3.0/",
                 "by": "Göran Liljeberg",

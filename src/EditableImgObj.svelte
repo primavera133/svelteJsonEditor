@@ -6,7 +6,7 @@
   export let open = false;
   let selectedValue = {};
 
-  let imgKeys = ["public_id", "license", "lic_url", "by", "url"];
+  let imgKeys = ["public_id", "caption", "license", "lic_url", "by", "url"];
 
   $: open = $openField === key;
 
@@ -22,10 +22,10 @@
     $json.images.all = [
       ...$json.images.all,
       {
-        alt: "",
         public_id: "",
+        caption: "",
         license: "CC BY 3.0",
-        "lic_url": "https://creativecommons.org/licenses/by/3.0/",
+        lic_url: "https://creativecommons.org/licenses/by/3.0/",
         by: "Göran Liljeberg",
         url: "http://liljebergs.nu/"
       }
