@@ -51,7 +51,9 @@ const dataTree = {
     'erythromma-lindenii',
     'erythromma-najas',
     'erythromma-viridulum',
-    'nehalennia-speciosa'
+    'nehalennia-speciosa',
+    'pyrrhosoma-nymphula',
+    'pyrrhosoma-elisabethae'
   ],
   cordulegastridae: [
     'cordulegaster-bidentata',
