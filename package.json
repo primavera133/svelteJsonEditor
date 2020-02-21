@@ -11,12 +11,12 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-terser": "^5.2.0",
     "svelte": "^3.0.0"
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "sass": "^1.23.3",
     "sirv-cli": "^0.4.4",
     "svelte-preprocess": "^3.2.6"

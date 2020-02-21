@@ -1,38 +1,44 @@
 {
-    "items_id": "",
-    "scientific_name": "",
-    "author_citation": "",
-    "local_names": [],
-    "description": "",
-    "behaviour": "",
-    "size": {
-        "length": "mm",
-        "wingspan": " mm"
-    },
-    "similar_species": [],
-    "distribution": "",
-    "habitat": "",
-    "flight_period": "",
-    "red_list": {
-        "habitats_directive": "",
-        "red_list_EU27": "",
-        "red_list_europe": "",
-        "red_list_mediterranean": "",
-        "EU27_endemic": "",
-        "red_list_europe_endemic": "",
-        "trend_europe": ""
-    },
-    "images": {
-        "cloud_name": "dragonflies",
-        "all": [
-            {
-                "public_id": "",
-                "caption": "",
-                "license": "CC BY 3.0",
-                "lic_url": "https://creativecommons.org/licenses/by/3.0/",
-                "by": "Göran Liljeberg",
-                "url": "http://liljebergs.nu/"
-            }
-        ]
-    }
+  "items_id": "",
+  "scientific_name": "",
+  "author_citation": "",
+  "local_names": [],
+  "description": "",
+  "behaviour": "",
+  "size": {
+    "length": "mm",
+    "wingspan": " mm"
+  },
+  "similar_species": [],
+  "distribution": "",
+  "habitat": "",
+  "flight_period": "",
+  "red_list": {
+    "habitats_directive": "",
+    "red_list_EU27": "",
+    "red_list_europe": "",
+    "red_list_mediterranean": "",
+    "EU27_endemic": "",
+    "red_list_europe_endemic": "",
+    "trend_europe": ""
+  },
+  "images": {
+    "cloud_name": "dragonflies",
+    "all": [
+      {
+        "public_id": "",
+        "caption": "",
+        "license": "CC BY 3.0",
+        "lic_url": "https://creativecommons.org/licenses/by/3.0/",
+        "by": "Göran Liljeberg",
+        "url": "http://liljebergs.nu/"
+      }
+    ]
+  },
+  "sources": [
+    "Atlas of the European Dragonflies and Damselflies, Jean-Pierre Boudot(Editor), Vincent J Kalkman(Editor), Fons Peels(Illustrator)",
+    "Dragonflies and Damselflies of Europe: A scientific approach to the identification of European Odonata without capture, Galliani, C.; Scherini, R.; Piglia, A.",
+    "Field guide to the dargonflies of Brittain and Europe, Klaas-Douwe B Dijkstra.",
+    "Nordens trollsländor, M. Billqvist, D. Andersson, C. Bergendorff"
+  ]
 }

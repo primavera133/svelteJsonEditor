@@ -67,5 +67,6 @@
     <EditableTextLine key="flight_period" />
     <EditableObjectList key="red_list" selectors={redListSelectors} />
     <EditableImgObj key="images" />
+    <EditableTextList key="sources" />
   </div>
 {/if}
