@@ -5,6 +5,7 @@
   import EditableTextList from "./EditableTextList.svelte";
   import EditableObjectList from "./EditableObjectList.svelte";
   import EditableImgObj from "./EditableImgObj.svelte";
+  import EditableLinkObj from "./EditableLinkObj.svelte";
   import { json } from "./stores.js";
 
   const redListOptions = [
@@ -68,6 +69,6 @@
     <EditableObjectList key="red_list" selectors={redListSelectors} />
     <EditableImgObj key="images" />
     <EditableTextList key="sources" />
-    <EditableTextList key="links" />
+    <EditableLinkObj key="links" />
   </div>
 {/if}
