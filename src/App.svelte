@@ -1,5 +1,6 @@
 <script>
   import { onMount, onDestroy, setContext } from "svelte";
+  import config from "./config";
   import { getJson } from "./utils/getJson";
   import FamilySelector from "./FamilySelector.svelte";
   import SpecieSelector from "./SpecieSelector.svelte";
@@ -49,12 +50,7 @@
   });
 
   $: {
-    getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
-      json.set(data)
-    );
-    // .catch(e => {
-    //   // console.log(e);
-    // });
+    getJson({ config, specie: selectedSpecie }).then(data => json.set(data));
   }
 </script>
 
@@ -115,7 +111,7 @@
           <Exporter />
           <Save />
           <Recover />
-          <Reset {selectedFamily} {selectedSpecie} />
+          <Reset {selectedSpecie} />
         </div>
       </div>
     </div>

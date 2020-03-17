@@ -2,6 +2,7 @@
     "svelte.language-server.runtime": "/usr/local/bin/node",
     "workbench.colorCustomizations": {
         "activityBar.background": "#ffce3a",
+        "activityBar.activeBackground": "#ffce3a",
         "activityBar.activeBorder": "#009f78",
         "activityBar.foreground": "#15202b",
         "activityBar.inactiveForeground": "#15202b99",

@@ -9,7 +9,12 @@
   let species = [];
   $: {
     if (selectedFamily) {
-      species = config.dataTree[selectedFamily];
+      species = Object.keys(config.dataTree[selectedFamily]).reduce(
+        (acc, genus) => {
+          return acc.concat(config.dataTree[selectedFamily][genus]);
+        },
+        []
+      );
     }
   }
 

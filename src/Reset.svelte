@@ -1,8 +1,8 @@
 <script>
   import { json, savedSpecie } from "./stores.js";
+  import config from "./config";
   import { getJson } from "./utils/getJson";
 
-  export let selectedFamily = "";
   export let selectedSpecie = "";
 
   let item = null;
@@ -13,9 +13,7 @@
   function handleReset() {
     window.localStorage.removeItem($json.items_id);
 
-    getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
-      json.set(data)
-    );
+    getJson({ config, specie: selectedSpecie }).then(data => json.set(data));
   }
 </script>
 

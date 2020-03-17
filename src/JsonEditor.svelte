@@ -68,5 +68,6 @@
     <EditableObjectList key="red_list" selectors={redListSelectors} />
     <EditableImgObj key="images" />
     <EditableTextList key="sources" />
+    <EditableTextList key="links" />
   </div>
 {/if}

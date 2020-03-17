@@ -388,166 +388,198 @@ var app = (function () {
     }
 
     const baseUrl =
-      'https://raw.githubusercontent.com/primavera133/dragonsGraphQLAPI/master/api/data/';
+      'https://raw.githubusercontent.com/primavera133/dragonsGraphQLAPI/master/api/_data/families/';
 
     const dataTree = {
-      aeshnidae: [
-        'aeshna-affinis',
-        'aeshna-caerulea',
-        'aeshna-crenata',
-        'aeshna-cyanea',
-        'aeshna-grandis',
-        'aeshna-isoceles',
-        'aeshna-juncea',
-        'aeshna-mixta',
-        'aeshna-serrata',
-        'aeshna-subarctica',
-        'aeshna-viridis',
-        'anax-ephippiger',
-        'anax-imaculifrons',
-        'anax-imperator',
-        'anax-junius',
-        'anax-parthenope',
-        'boyeria-cretensis',
-        'boyeria-irene',
-        'brachytron-pratense',
-        'caliaeschna-microstigma'
-      ],
-      calopterygidae: [
-        'calopteryx-haemorrhoidalis',
-        'calopteryx-splendens',
-        'calopteryx-virgo',
-        'calopteryx-xanthostoma'
-      ],
-      coenagrionidae: [
-        'ceriagrion-georgifreyi',
-        'ceriagrion-tenellum',
-        'coenagrion-armatum',
-        'coenagrion-caerulescens',
-        'coenagrion-ecornutum',
-        'coenagrion-glaciale',
-        'coenagrion-hastulatum',
-        'coenagrion-hylas',
-        'coenagrion-intermedium',
-        'coenagrion-johanssonii',
-        'coenagrion-lunulatum',
-        'coenagrion-mercuriale',
-        'coenagrion-ornatum',
-        'coenagrion-puella',
-        'coenagrion-pulchellum',
-        'coenagrion-scitulum',
-        'enallagma-cyathigerum',
-        'erythromma-lindenii',
-        'erythromma-najas',
-        'erythromma-viridulum',
-        'ischnura-aralensis',
-        'ischnura-elegans',
-        'ischnura-fountaineae',
-        'ischnura-genei',
-        'ischnura-graelsii',
-        'ischnura-hastata',
-        'ischnura-intermedia',
-        'ischnura-saharensis',
-        'ischnura-senegalensis',
-        'nehalennia-speciosa',
-        'pyrrhosoma-nymphula',
-        'pyrrhosoma-elisabethae'
-      ],
-      cordulegastridae: [
-        'cordulegaster-bidentata',
-        'cordulegaster-boltonii',
-        'cordulegaster-helladica',
-        'cordulegaster-heros',
-        'cordulegaster-insignis',
-        'cordulegaster-picta',
-        'cordulegaster-trinacriae'
-      ],
-      corduliidae: [
-        'cordulia-aenea',
-        'epitheca-bimaculata',
-        'somatochlora-alpestris',
-        'somatochlora-arctica',
-        'somatochlora-borisi',
-        'somatochlora-flavomaculata',
-        'somatochlora-graeseri',
-        'somatochlora-meridionalis',
-        'somatochlora-metallica',
-        'somatochlora-sahlbergi'
-      ],
-      euphaeidae: ['epallage-fatime'],
-      gomphidae: [
-        'lindenia-tetraphylla',
-        'gomphus-flavipes',
-        'gomphus-graslinii',
-        'gomphus-pulchellus',
-        'gomphus-schneiderii',
-        'gomphus-simillimus',
-        'gomphus-vulgatissimus',
-        'onychogomphus-costae',
-        'onychogomphus-forcipatus',
-        'onychogomphus-uncatus',
-        'ophiogomphus-cecilia',
-        'paragomphus-genei'
-      ],
-      incerta_sedis: ['oxygastra-curtisii'],
-      lestidae: [
-        'chalcolestes-parvidens',
-        'chalcolestes-viridis',
-        'lestes-barbarus',
-        'lestes-dryas',
-        'lestes-macrostigma',
-        'lestes-sponsa',
-        'lestes-virens',
-        'sympecma-fusca',
-        'sympecma-paedisca'
-      ],
-      libellulidae: [
-        'brachythemis-impartita',
-        'crocothemis-erythraea',
-        'diplacodes-lefebvrii',
-        'leucorrhinia-albifrons',
-        'leucorrhinia-caudalis',
-        'leucorrhinia-dubia',
-        'leucorrhinia-pectoralis',
-        'leucorrhinia-rubicunda',
-        'libellula-depressa',
-        'libellula-fulva',
-        'libellula-quadrimaculata',
-        'orthetrum-albistylum',
-        'orthetrum-brunneum',
-        'orthetrum-cancellatum',
-        'orthetrum-chrysostigma',
-        'orthetrum-coerulescens',
-        'orthetrum-nitidinerve',
-        'orthetrum-sabina',
-        'orthetrum-taeniolatum',
-        'orthetrum-trinacria',
-        'pantala-flavescens',
-        'selysiothemis-nigra',
-        'sympetrum-danae',
-        'sympetrum-depressiculum',
-        'sympetrum-flaveolum',
-        'sympetrum-fonscolombii',
-        'sympetrum-meridionale',
-        'sympetrum-nigrifemur',
-        'sympetrum-pedemontanum',
-        'sympetrum-sanguineum',
-        'sympetrum-sinaiticum',
-        'sympetrum-striolatum',
-        'sympetrum-vulgatum',
-        'trithemis-annulata',
-        'trithemis-arteriosa',
-        'trithemis-festiva',
-        'trithemis-kirbyi',
-        'zygonyx-torridus'
-      ],
-      macromiidae: ['macromia-amphigena', 'macromia-splendens'],
-      platycnemididae: [
-        'platycnemis-acutipennis',
-        'platycnemis-dealbata',
-        'platycnemis-latipes',
-        'platycnemis-pennipes'
-      ]
+      aeshnidae: {
+        aeshna: [
+          'aeshna-affinis',
+          'aeshna-caerulea',
+          'aeshna-crenata',
+          'aeshna-cyanea',
+          'aeshna-grandis',
+          'aeshna-isoceles',
+          'aeshna-juncea',
+          'aeshna-mixta',
+          'aeshna-serrata',
+          'aeshna-subarctica',
+          'aeshna-viridis'
+        ],
+        anax: [
+          'anax-ephippiger',
+          'anax-imaculifrons',
+          'anax-imperator',
+          'anax-junius',
+          'anax-parthenope'
+        ],
+        boyeria: ['boyeria-cretensis', 'boyeria-irene'],
+        brachytron: ['brachytron-pratense'],
+        caliaeschna: ['caliaeschna-microstigma']
+      },
+      calopterygidae: {
+        calopteryx: [
+          'calopteryx-haemorrhoidalis',
+          'calopteryx-splendens',
+          'calopteryx-virgo',
+          'calopteryx-xanthostoma'
+        ]
+      },
+      coenagrionidae: {
+        ceriagrion: ['ceriagrion-georgifreyi', 'ceriagrion-tenellum'],
+        coenagrion: [
+          'coenagrion-armatum',
+          'coenagrion-caerulescens',
+          'coenagrion-ecornutum',
+          'coenagrion-glaciale',
+          'coenagrion-hastulatum',
+          'coenagrion-hylas',
+          'coenagrion-intermedium',
+          'coenagrion-johanssonii',
+          'coenagrion-lunulatum',
+          'coenagrion-mercuriale',
+          'coenagrion-ornatum',
+          'coenagrion-puella',
+          'coenagrion-pulchellum',
+          'coenagrion-scitulum'
+        ],
+        enallagma: ['enallagma-cyathigerum'],
+        erythromma: [
+          'erythromma-lindenii',
+          'erythromma-najas',
+          'erythromma-viridulum'
+        ],
+        ischnura: [
+          'ischnura-aralensis',
+          'ischnura-elegans',
+          'ischnura-fountaineae',
+          'ischnura-genei',
+          'ischnura-graelsii',
+          'ischnura-hastata',
+          'ischnura-intermedia',
+          'ischnura-saharensis',
+          'ischnura-senegalensis'
+        ],
+        nehalennia: ['nehalennia-speciosa'],
+        pyrrhosoma: ['pyrrhosoma-nymphula', 'pyrrhosoma-elisabethae']
+      },
+      cordulegastridae: {
+        cordulegaster: [
+          'cordulegaster-bidentata',
+          'cordulegaster-boltonii',
+          'cordulegaster-helladica',
+          'cordulegaster-heros',
+          'cordulegaster-insignis',
+          'cordulegaster-picta',
+          'cordulegaster-trinacriae'
+        ]
+      },
+      corduliidae: {
+        cordulia: ['cordulia-aenea'],
+        epitheca: ['epitheca-bimaculata'],
+        somatochlora: [
+          'somatochlora-alpestris',
+          'somatochlora-arctica',
+          'somatochlora-borisi',
+          'somatochlora-flavomaculata',
+          'somatochlora-graeseri',
+          'somatochlora-meridionalis',
+          'somatochlora-metallica',
+          'somatochlora-sahlbergi'
+        ]
+      },
+      euphaeidae: { epallage: ['epallage-fatime'] },
+      gomphidae: {
+        lindenia: ['lindenia-tetraphylla'],
+        gomphus: [
+          'gomphus-flavipes',
+          'gomphus-graslinii',
+          'gomphus-pulchellus',
+          'gomphus-schneiderii',
+          'gomphus-simillimus',
+          'gomphus-vulgatissimus'
+        ],
+        onychogomphus: [
+          'onychogomphus-costae',
+          'onychogomphus-forcipatus',
+          'onychogomphus-uncatus'
+        ],
+        ophiogomphus: ['ophiogomphus-cecilia'],
+        paragomphus: ['paragomphus-genei']
+      },
+      incertae_sedis: {
+        oxygastra: ['oxygastra-curtisii']
+      },
+      lestidae: {
+        chalcolestes: ['chalcolestes-parvidens', 'chalcolestes-viridis'],
+        lestes: [
+          'lestes-barbarus',
+          'lestes-dryas',
+          'lestes-macrostigma',
+          'lestes-sponsa',
+          'lestes-virens',
+          'sympecma-fusca',
+          'sympecma-paedisca'
+        ]
+      },
+      libellulidae: {
+        brachythemis: ['brachythemis-impartita'],
+        crocothemis: ['crocothemis-erythraea'],
+        diplacodes: ['diplacodes-lefebvrii'],
+        leucorrhinia: [
+          'leucorrhinia-albifrons',
+          'leucorrhinia-caudalis',
+          'leucorrhinia-dubia',
+          'leucorrhinia-pectoralis',
+          'leucorrhinia-rubicunda'
+        ],
+        libellula: [
+          'libellula-depressa',
+          'libellula-fulva',
+          'libellula-quadrimaculata'
+        ],
+        orthetrum: [
+          'orthetrum-albistylum',
+          'orthetrum-brunneum',
+          'orthetrum-cancellatum',
+          'orthetrum-chrysostigma',
+          'orthetrum-coerulescens',
+          'orthetrum-nitidinerve',
+          'orthetrum-sabina',
+          'orthetrum-taeniolatum',
+          'orthetrum-trinacria'
+        ],
+        pantala: ['pantala-flavescens'],
+        selysiothemis: ['selysiothemis-nigra'],
+        sympetrum: [
+          'sympetrum-danae',
+          'sympetrum-depressiculum',
+          'sympetrum-flaveolum',
+          'sympetrum-fonscolombii',
+          'sympetrum-meridionale',
+          'sympetrum-nigrifemur',
+          'sympetrum-pedemontanum',
+          'sympetrum-sanguineum',
+          'sympetrum-sinaiticum',
+          'sympetrum-striolatum',
+          'sympetrum-vulgatum'
+        ],
+        trithemis: [
+          'trithemis-annulata',
+          'trithemis-arteriosa',
+          'trithemis-festiva',
+          'trithemis-kirbyi'
+        ],
+        zygonyx: ['zygonyx-torridus']
+      },
+      macromiidae: { macromia: ['macromia-amphigena', 'macromia-splendens'] },
+      platycnemididae: {
+        platycnemis: [
+          'platycnemis-acutipennis',
+          'platycnemis-dealbata',
+          'platycnemis-latipes',
+          'platycnemis-pennipes'
+        ]
+      }
     };
 
     var config = {
@@ -1979,6 +2011,8 @@ var app = (function () {
     	"Field guide to the dargonflies of Brittain and Europe, Klaas-Douwe B Dijkstra.",
     	"Nordens trollsländor, M. Billqvist, D. Andersson, C. Bergendorff"
     ];
+    var links = [
+    ];
     var initialJson = {
     	items_id: items_id,
     	scientific_name: scientific_name,
@@ -1993,25 +2027,39 @@ var app = (function () {
     	flight_period: flight_period,
     	red_list: red_list,
     	images: images,
-    	sources: sources
+    	sources: sources,
+    	links: links
     };
 
     function normalize (data) {
       return Object.assign(initialJson, data)
     }
 
-    const getJson = ({ family, species }) => {
+    const getJson = ({ config, specie }) => {
       return new Promise((resolve, reject) => {
-        if (!family || !species || !family.length || !species.length) {
+        if (!config || !specie || !specie.length) {
           return
         }
 
-        const url = `${config.baseUrl}${family}/${species}.json`;
+        const family = Object.keys(config.dataTree).find(family => {
+          const species = Object.keys(config.dataTree[family]).reduce(
+            (acc, genus) => {
+              return acc.concat(config.dataTree[family][genus])
+            },
+            []
+          );
+          return species.includes(specie)
+        });
+
+        const genus = Object.keys(config.dataTree[family]).find(genus => {
+          return config.dataTree[family][genus].includes(specie)
+        });
+
+        const url = `${config.baseUrl}${family}/${genus}/${specie}.json`;
         axios$1
           .get(url)
           .then(response => resolve(normalize(response.data)))
           .catch(e => {
-            console.log(555, initialJson);
             resolve(initialJson);
           });
       })
@@ -2197,16 +2245,17 @@ var app = (function () {
     }
 
     /* src/SpecieSelector.svelte generated by Svelte v3.12.1 */
+    const { Object: Object_1$1 } = globals;
 
     const file$1 = "src/SpecieSelector.svelte";
 
     function get_each_context$1(ctx, list, i) {
-    	const child_ctx = Object.create(ctx);
+    	const child_ctx = Object_1$1.create(ctx);
     	child_ctx.specie = list[i];
     	return child_ctx;
     }
 
-    // (31:0) {#if selectedFamily}
+    // (36:0) {#if selectedFamily}
     function create_if_block(ctx) {
     	var div, select, option, t0, t1, option_value_value, dispose;
 
@@ -2231,12 +2280,12 @@ var app = (function () {
     			}
     			option.__value = option_value_value = "Välj en art inom " + ctx.selectedFamily;
     			option.value = option.__value;
-    			add_location(option, file$1, 33, 6, 643);
+    			add_location(option, file$1, 38, 6, 789);
     			if (ctx.selected === void 0) add_render_callback(() => ctx.select_change_handler.call(select));
     			attr_dev(select, "id", "species");
-    			add_location(select, file$1, 32, 4, 568);
+    			add_location(select, file$1, 37, 4, 714);
     			attr_dev(div, "class", "select select-specie svelte-130s37p");
-    			add_location(div, file$1, 31, 2, 529);
+    			add_location(div, file$1, 36, 2, 675);
 
     			dispose = [
     				listen_dev(select, "change", ctx.select_change_handler),
@@ -2304,11 +2353,11 @@ var app = (function () {
     			run_all(dispose);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(31:0) {#if selectedFamily}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(36:0) {#if selectedFamily}", ctx });
     	return block;
     }
 
-    // (35:6) {#each species as specie}
+    // (40:6) {#each species as specie}
     function create_each_block$1(ctx) {
     	var option, t0_value = ctx.specie + "", t0, t1, option_selected_value, option_value_value;
 
@@ -2320,7 +2369,7 @@ var app = (function () {
     			option.selected = option_selected_value = ctx.specie === ctx.selectedSpecie;
     			option.__value = option_value_value = ctx.specie;
     			option.value = option.__value;
-    			add_location(option, file$1, 35, 8, 734);
+    			add_location(option, file$1, 40, 8, 880);
     		},
 
     		m: function mount(target, anchor) {
@@ -2351,7 +2400,7 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$1.name, type: "each", source: "(35:6) {#each species as specie}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$1.name, type: "each", source: "(40:6) {#each species as specie}", ctx });
     	return block;
     }
 
@@ -2420,7 +2469,7 @@ var app = (function () {
       }
 
     	const writable_props = ['selectedFamily', 'selectedSpecie'];
-    	Object.keys($$props).forEach(key => {
+    	Object_1$1.keys($$props).forEach(key => {
     		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<SpecieSelector> was created with unknown prop '${key}'`);
     	});
 
@@ -2450,7 +2499,12 @@ var app = (function () {
     	$$self.$$.update = ($$dirty = { selectedFamily: 1 }) => {
     		if ($$dirty.selectedFamily) { {
             if (selectedFamily) {
-              $$invalidate('species', species = config.dataTree[selectedFamily]);
+              $$invalidate('species', species = Object.keys(config.dataTree[selectedFamily]).reduce(
+                (acc, genus) => {
+                  return acc.concat(config.dataTree[selectedFamily][genus]);
+                },
+                []
+              ));
             }
           } }
     	};
@@ -4623,7 +4677,7 @@ var app = (function () {
 
     // (55:0) {#if $json.scientific_name}
     function create_if_block$6(ctx) {
-    	var div, t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, current;
+    	var div, t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, current;
 
     	var editabletextline0 = new EditableTextLine({
     		props: { key: "scientific_name" },
@@ -4690,6 +4744,8 @@ var app = (function () {
     		$$inline: true
     	});
 
+    	var editabletextlist3 = new EditableTextList({ props: { key: "links" }, $$inline: true });
+
     	const block = {
     		c: function create() {
     			div = element("div");
@@ -4718,6 +4774,8 @@ var app = (function () {
     			editableimgobj.$$.fragment.c();
     			t11 = space();
     			editabletextlist2.$$.fragment.c();
+    			t12 = space();
+    			editabletextlist3.$$.fragment.c();
     			attr_dev(div, "class", "editors svelte-1s0lx9d");
     			add_location(div, file$7, 55, 2, 1571);
     		},
@@ -4749,6 +4807,8 @@ var app = (function () {
     			mount_component(editableimgobj, div, null);
     			append_dev(div, t11);
     			mount_component(editabletextlist2, div, null);
+    			append_dev(div, t12);
+    			mount_component(editabletextlist3, div, null);
     			current = true;
     		},
 
@@ -4782,6 +4842,8 @@ var app = (function () {
 
     			transition_in(editabletextlist2.$$.fragment, local);
 
+    			transition_in(editabletextlist3.$$.fragment, local);
+
     			current = true;
     		},
 
@@ -4799,6 +4861,7 @@ var app = (function () {
     			transition_out(editableobjectlist1.$$.fragment, local);
     			transition_out(editableimgobj.$$.fragment, local);
     			transition_out(editabletextlist2.$$.fragment, local);
+    			transition_out(editabletextlist3.$$.fragment, local);
     			current = false;
     		},
 
@@ -4832,6 +4895,8 @@ var app = (function () {
     			destroy_component(editableimgobj);
 
     			destroy_component(editabletextlist2);
+
+    			destroy_component(editabletextlist3);
     		}
     	};
     	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$6.name, type: "if", source: "(55:0) {#if $json.scientific_name}", ctx });
@@ -5332,7 +5397,7 @@ var app = (function () {
 
     const file$b = "src/Reset.svelte";
 
-    // (22:0) {#if item}
+    // (20:0) {#if item}
     function create_if_block$a(ctx) {
     	var button, dispose;
 
@@ -5340,7 +5405,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			button.textContent = "Reset";
-    			add_location(button, file$b, 22, 2, 528);
+    			add_location(button, file$b, 20, 2, 499);
     			dispose = listen_dev(button, "click", ctx.handleReset);
     		},
 
@@ -5356,7 +5421,7 @@ var app = (function () {
     			dispose();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(22:0) {#if item}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$a.name, type: "if", source: "(20:0) {#if item}", ctx });
     	return block;
     }
 
@@ -5418,34 +5483,30 @@ var app = (function () {
 
     	
 
-      let { selectedFamily = "", selectedSpecie = "" } = $$props;
+      let { selectedSpecie = "" } = $$props;
 
       let item = null;
 
       function handleReset() {
         window.localStorage.removeItem($json.items_id);
 
-        getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
-          json.set(data)
-        );
+        getJson({ config, specie: selectedSpecie }).then(data => json.set(data));
       }
 
-    	const writable_props = ['selectedFamily', 'selectedSpecie'];
+    	const writable_props = ['selectedSpecie'];
     	Object.keys($$props).forEach(key => {
     		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Reset> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$set = $$props => {
-    		if ('selectedFamily' in $$props) $$invalidate('selectedFamily', selectedFamily = $$props.selectedFamily);
     		if ('selectedSpecie' in $$props) $$invalidate('selectedSpecie', selectedSpecie = $$props.selectedSpecie);
     	};
 
     	$$self.$capture_state = () => {
-    		return { selectedFamily, selectedSpecie, item, $json, $savedSpecie };
+    		return { selectedSpecie, item, $json, $savedSpecie };
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ('selectedFamily' in $$props) $$invalidate('selectedFamily', selectedFamily = $$props.selectedFamily);
     		if ('selectedSpecie' in $$props) $$invalidate('selectedSpecie', selectedSpecie = $$props.selectedSpecie);
     		if ('item' in $$props) $$invalidate('item', item = $$props.item);
     		if ('$json' in $$props) json.set($json);
@@ -5458,27 +5519,14 @@ var app = (function () {
           } }
     	};
 
-    	return {
-    		selectedFamily,
-    		selectedSpecie,
-    		item,
-    		handleReset
-    	};
+    	return { selectedSpecie, item, handleReset };
     }
 
     class Reset extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, ["selectedFamily", "selectedSpecie"]);
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, ["selectedSpecie"]);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Reset", options, id: create_fragment$b.name });
-    	}
-
-    	get selectedFamily() {
-    		throw new Error("<Reset>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set selectedFamily(value) {
-    		throw new Error("<Reset>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
     	get selectedSpecie() {
@@ -5494,7 +5542,7 @@ var app = (function () {
 
     const file$c = "src/App.svelte";
 
-    // (96:8) {#if $json.scientific_name}
+    // (92:8) {#if $json.scientific_name}
     function create_if_block$b(ctx) {
     	var h2, t_value = ctx.$json.scientific_name + "", t;
 
@@ -5503,7 +5551,7 @@ var app = (function () {
     			h2 = element("h2");
     			t = text(t_value);
     			attr_dev(h2, "class", "h4 svelte-1w6t2k1");
-    			add_location(h2, file$c, 96, 10, 2244);
+    			add_location(h2, file$c, 92, 10, 2189);
     		},
 
     		m: function mount(target, anchor) {
@@ -5523,7 +5571,7 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$b.name, type: "if", source: "(96:8) {#if $json.scientific_name}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$b.name, type: "if", source: "(92:8) {#if $json.scientific_name}", ctx });
     	return block;
     }
 
@@ -5551,10 +5599,7 @@ var app = (function () {
     	var recover = new Recover({ $$inline: true });
 
     	var reset = new Reset({
-    		props: {
-    		selectedFamily: ctx.selectedFamily,
-    		selectedSpecie: ctx.selectedSpecie
-    	},
+    		props: { selectedSpecie: ctx.selectedSpecie },
     		$$inline: true
     	});
 
@@ -5593,27 +5638,27 @@ var app = (function () {
     			attr_dev(img, "src", "libellula-bw.png");
     			attr_dev(img, "alt", "libellula");
     			attr_dev(img, "class", "svelte-1w6t2k1");
-    			add_location(img, file$c, 85, 6, 1901);
+    			add_location(img, file$c, 81, 6, 1846);
     			attr_dev(h1, "class", "h4 svelte-1w6t2k1");
-    			add_location(h1, file$c, 86, 6, 1954);
+    			add_location(h1, file$c, 82, 6, 1899);
     			attr_dev(div0, "class", "heading svelte-1w6t2k1");
-    			add_location(div0, file$c, 84, 4, 1873);
+    			add_location(div0, file$c, 80, 4, 1818);
     			attr_dev(div1, "class", "col-sm-4");
-    			add_location(div1, file$c, 90, 6, 2045);
+    			add_location(div1, file$c, 86, 6, 1990);
     			attr_dev(div2, "class", "col-sm-8");
-    			add_location(div2, file$c, 94, 6, 2175);
+    			add_location(div2, file$c, 90, 6, 2120);
     			attr_dev(div3, "class", "row hero svelte-1w6t2k1");
-    			add_location(div3, file$c, 89, 4, 2016);
+    			add_location(div3, file$c, 85, 4, 1961);
     			attr_dev(section0, "class", "container svelte-1w6t2k1");
-    			add_location(section0, file$c, 83, 2, 1841);
-    			add_location(div4, file$c, 106, 8, 2453);
+    			add_location(section0, file$c, 79, 2, 1786);
+    			add_location(div4, file$c, 102, 8, 2398);
     			attr_dev(div5, "class", "col-sm-12");
-    			add_location(div5, file$c, 103, 6, 2397);
+    			add_location(div5, file$c, 99, 6, 2342);
     			attr_dev(div6, "class", "row");
-    			add_location(div6, file$c, 102, 4, 2373);
+    			add_location(div6, file$c, 98, 4, 2318);
     			attr_dev(section1, "class", "container svelte-1w6t2k1");
-    			add_location(section1, file$c, 101, 2, 2341);
-    			add_location(main, file$c, 82, 0, 1832);
+    			add_location(section1, file$c, 97, 2, 2286);
+    			add_location(main, file$c, 78, 0, 1777);
     		},
 
     		l: function claim(nodes) {
@@ -5673,7 +5718,6 @@ var app = (function () {
     			}
 
     			var reset_changes = {};
-    			if (changed.selectedFamily) reset_changes.selectedFamily = ctx.selectedFamily;
     			if (changed.selectedSpecie) reset_changes.selectedSpecie = ctx.selectedSpecie;
     			reset.$set(reset_changes);
     		},
@@ -5792,14 +5836,9 @@ var app = (function () {
     		if ('$json' in $$props) json.set($json);
     	};
 
-    	$$self.$$.update = ($$dirty = { selectedFamily: 1, selectedSpecie: 1 }) => {
-    		if ($$dirty.selectedFamily || $$dirty.selectedSpecie) { {
-            getJson({ family: selectedFamily, species: selectedSpecie }).then(data =>
-              json.set(data)
-            );
-            // .catch(e => {
-            //   // console.log(e);
-            // });
+    	$$self.$$.update = ($$dirty = { selectedSpecie: 1 }) => {
+    		if ($$dirty.selectedSpecie) { {
+            getJson({ config, specie: selectedSpecie }).then(data => json.set(data));
           } }
     	};
 
