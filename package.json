@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "sass": "^1.23.3",
     "sirv-cli": "^0.4.4",
     "svelte-preprocess": "^3.2.6"
